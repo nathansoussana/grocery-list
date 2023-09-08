@@ -67,3 +67,7 @@ ul li {
 ul li:hover {
     cursor: pointer;
 }
+
+.item-selected {
+    background-color: #9DC183;
+}
