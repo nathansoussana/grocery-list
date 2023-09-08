@@ -69,5 +69,6 @@ ul li:hover {
 }
 
 .item-selected {
-    background-color: #9DC183;
+    background-color: #48AC9A;
+    color: #ffffff;
 }
