@@ -14,20 +14,20 @@ const addButtonEl = document.getElementById("add-button")
 const shoppingListEl = document.getElementById("shopping-list")
 
 addButtonEl.addEventListener("click", function() {
-    let inputValue = inputFieldEl.value
-    push(shoppingListInDB, inputValue)
-    clearInputFieldEl()
+    handleAddItem()
 })
 
 inputFieldEl.addEventListener("keydown", function(event) {
     if (event.key === "Enter") {
-        event.preventDefault();
-
-        let inputValue = inputFieldEl.value;
-        push(shoppingListInDB, inputValue);
-        clearInputFieldEl();
+        handleAddItem()
     }
 });
+
+function handleAddItem() {
+    let inputValue = inputFieldEl.value
+        push(shoppingListInDB, inputValue)
+        clearInputFieldEl()
+}
 
 onValue(shoppingListInDB, function(snapshot) {
     if (snapshot.exists()) {
