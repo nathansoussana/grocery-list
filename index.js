@@ -15,11 +15,19 @@ const shoppingListEl = document.getElementById("shopping-list")
 
 addButtonEl.addEventListener("click", function() {
     let inputValue = inputFieldEl.value
-    
     push(shoppingListInDB, inputValue)
-    
     clearInputFieldEl()
 })
+
+inputFieldEl.addEventListener("keydown", function(event) {
+    if (event.key === "Enter") {
+        event.preventDefault();
+
+        let inputValue = inputFieldEl.value;
+        push(shoppingListInDB, inputValue);
+        clearInputFieldEl();
+    }
+});
 
 onValue(shoppingListInDB, function(snapshot) {
     if (snapshot.exists()) {
